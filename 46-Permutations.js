@@ -68,4 +68,4 @@ var permute = function(nums) {
   return p;
 };
 
-// Time and space complexity is O(n!)
+// Time complexity: Each num in nums will recurse n! time and each recursion takes n time therefore the runtime will be O(n^2*n!)
