@@ -12,30 +12,15 @@
  */
 var mergeTrees = function(t1, t2) {
   const stack = [];
-  if (t1 !== null && t2 !== null) {
-    t1.val = t1.val + t2.val;
-  } else if (t1 === null && t2 !== null) {
+  if (t1 === null) {
     return t2;
-  } else if (t1 !== null && t2 === null) {
-    return t1;
-  } else {
+  }
+
+  if (t2 === null) {
     return t1;
   }
 
-  if (t1.left !== null) {
-    if (t2.left !== null) {
-      stack.push([t1.left, t2.left]);
-    }
-  } else {
-    t1.left = t2.left;
-  }
-  if (t1.right !== null) {
-    if (t2.right !== null) {
-      stack.push([t1.right, t2.right]);
-    }
-  } else {
-    t1.right = t2.right;
-  }
+  stack.push([t1, t2]);
 
   while (stack.length !== 0) {
     let currentNode = stack.pop();
