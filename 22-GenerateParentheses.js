@@ -97,6 +97,7 @@ var generateParenthesis = function(n) {
     recursionRightBrackets(str, n - i, n);
     str += '(';
   }
+
   return solutions;
 };
 
